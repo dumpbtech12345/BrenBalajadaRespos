@@ -12,6 +12,6 @@ class ProfileController extends Controller
         // Assuming the ID for Bren's profile is 1 (replace with actual ID or retrieval logic as needed)
         $profile = Profile::with(['educations', 'skills', 'certifications', 'language', 'references'])->findOrFail(1);
     
-        return view('brenbalajadiaresume', compact('profile'));
+        return view('arvickmercadoresume', compact('profile'));
     }
 }

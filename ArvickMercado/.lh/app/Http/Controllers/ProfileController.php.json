@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1730366826250,
@@ -16,6 +16,10 @@
                 {
                     "date": 1730369282333,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n {\n     public function showResume()\n     {\n         // Assuming the ID for Bren's profile is 1 (replace with actual ID or retrieval logic as needed)\n-        $profile = Profile::with(['educations', 'skills', 'certifications', 'languages', 'references'])->findOrFail(1);\n+        $profile = Profile::with(['educations', 'skills', 'certifications', 'language', 'references'])->findOrFail(1);\n     \n         return view('brenbalajadiaresume', compact('profile'));\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730378685271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n     {\n         // Assuming the ID for Bren's profile is 1 (replace with actual ID or retrieval logic as needed)\n         $profile = Profile::with(['educations', 'skills', 'certifications', 'language', 'references'])->findOrFail(1);\n     \n-        return view('brenbalajadiaresume', compact('profile'));\n+        return view('arvickmercadoresume', compact('profile'));\n     }\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1730366826250,

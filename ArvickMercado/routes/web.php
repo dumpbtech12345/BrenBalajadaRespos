@@ -6,4 +6,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/brenbalajadiaresume', [ProfileController::class, 'showResume'])->name('bren.resume');
+Route::get('/arvickmercadoresume', [ProfileController::class, 'showResume'])->name('arvick.resume');

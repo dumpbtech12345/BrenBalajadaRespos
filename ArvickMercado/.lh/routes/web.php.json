@@ -1,0 +1,26 @@
+{
+    "sourceFile": "routes/web.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1730367056291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730378712353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/brenbalajadiaresume', [ProfileController::class, 'showResume'])->name('bren.resume');\n+Route::get('/arvickmercadoresume', [ProfileController::class, 'showResume'])->name('bren.resume');\n"
+                },
+                {
+                    "date": 1730378736961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get('/arvickmercadoresume', [ProfileController::class, 'showResume'])->name('bren.resume');\n+Route::get('/arvickmercadoresume', [ProfileController::class, 'showResume'])->name('arvick.resume');\n"
+                }
+            ],
+            "date": 1730367056291,
+            "name": "Commit-0",
+            "content": "<?php\nuse App\\Http\\Controllers\\ProfileController;\nuse Illuminate\\Support\\Facades\\Route;\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::get('/brenbalajadiaresume', [ProfileController::class, 'showResume'])->name('bren.resume');\n"
+        }
+    ]
+}
