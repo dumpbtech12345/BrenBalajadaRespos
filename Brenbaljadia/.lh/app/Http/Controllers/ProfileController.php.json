@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/Http/Controllers/ProfileController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1730366826250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730367016179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,53 +6,12 @@\n use Illuminate\\Http\\Request;\n \n class ProfileController extends Controller\n {\n-    public function index()\n+    public function showResume()\n     {\n-        $profiles = Profile::with(['educations', 'skills', 'certifications', 'languages', 'references'])->get();\n-        return view('profiles.index', compact('profiles'));\n+        // Assuming the ID for Bren's profile is 1 (replace with actual ID or retrieval logic as needed)\n+        $profile = Profile::with(['educations', 'skills', 'certifications', 'languages', 'references'])->findOrFail(1);\n+    \n+        return view('brenbalajadiaresume', compact('profile'));\n     }\n-\n-    public function create()\n-    {\n-        return view('profiles.create');\n-    }\n-\n-    public function store(Request $request)\n-    {\n-        $profile = Profile::create($request->only([\n-            'name', 'address', 'phone', 'email', 'facebook', 'instagram', 'birthday', 'age', 'sex', 'mother', 'father', 'objective'\n-        ]));\n-\n-        // Additional data for related tables can be added here\n-\n-        return redirect()->route('profiles.index');\n-    }\n-\n-    public function show(Profile $profile)\n-    {\n-        return view('profiles.show', compact('profile'));\n-    }\n-\n-    public function edit(Profile $profile)\n-    {\n-        return view('profiles.edit', compact('profile'));\n-    }\n-\n-    public function update(Request $request, Profile $profile)\n-    {\n-        $profile->update($request->only([\n-            'name', 'address', 'phone', 'email', 'facebook', 'instagram', 'birthday', 'age', 'sex', 'mother', 'father', 'objective'\n-        ]));\n-\n-        // Update related data if needed\n-\n-        return redirect()->route('profiles.index');\n-    }\n-\n-    public function destroy(Profile $profile)\n-    {\n-        $profile->delete();\n-        return redirect()->route('profiles.index');\n-    }\n-}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730369282333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n {\n     public function showResume()\n     {\n         // Assuming the ID for Bren's profile is 1 (replace with actual ID or retrieval logic as needed)\n-        $profile = Profile::with(['educations', 'skills', 'certifications', 'languages', 'references'])->findOrFail(1);\n+        $profile = Profile::with(['educations', 'skills', 'certifications', 'language', 'references'])->findOrFail(1);\n     \n         return view('brenbalajadiaresume', compact('profile'));\n     }\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1730366826250,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\Profile;\nuse Illuminate\\Http\\Request;\n\nclass ProfileController extends Controller\n{\n    public function index()\n    {\n        $profiles = Profile::with(['educations', 'skills', 'certifications', 'languages', 'references'])->get();\n        return view('profiles.index', compact('profiles'));\n    }\n\n    public function create()\n    {\n        return view('profiles.create');\n    }\n\n    public function store(Request $request)\n    {\n        $profile = Profile::create($request->only([\n            'name', 'address', 'phone', 'email', 'facebook', 'instagram', 'birthday', 'age', 'sex', 'mother', 'father', 'objective'\n        ]));\n\n        // Additional data for related tables can be added here\n\n        return redirect()->route('profiles.index');\n    }\n\n    public function show(Profile $profile)\n    {\n        return view('profiles.show', compact('profile'));\n    }\n\n    public function edit(Profile $profile)\n    {\n        return view('profiles.edit', compact('profile'));\n    }\n\n    public function update(Request $request, Profile $profile)\n    {\n        $profile->update($request->only([\n            'name', 'address', 'phone', 'email', 'facebook', 'instagram', 'birthday', 'age', 'sex', 'mother', 'father', 'objective'\n        ]));\n\n        // Update related data if needed\n\n        return redirect()->route('profiles.index');\n    }\n\n    public function destroy(Profile $profile)\n    {\n        $profile->delete();\n        return redirect()->route('profiles.index');\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/Models/Profile.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1730365607366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730369157239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     {\n         return $this->hasMany(Certification::class);\n     }\n \n-    public function languages()\n+    public function language()\n     {\n         return $this->hasMany(Language::class);\n     }\n \n"
+                }
+            ],
+            "date": 1730365607366,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Profile extends Model\n{\n    use HasFactory;\n\n    protected $fillable = [\n        'name', 'address', 'phone', 'email', 'facebook', 'instagram',\n        'birthday', 'age', 'sex', 'mother', 'father', 'objective'\n    ];\n\n    public function educations()\n    {\n        return $this->hasMany(Education::class);\n    }\n\n    public function skills()\n    {\n        return $this->hasMany(Skill::class);\n    }\n\n    public function certifications()\n    {\n        return $this->hasMany(Certification::class);\n    }\n\n    public function languages()\n    {\n        return $this->hasMany(Language::class);\n    }\n\n    public function references()\n    {\n        return $this->hasMany(Reference::class);\n    }\n}\n"
+        }
+    ]
+}

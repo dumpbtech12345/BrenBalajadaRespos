@@ -1,0 +1,38 @@
+{
+    "sourceFile": "app/Models/Education.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1730365663711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730365719052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,10 @@\n-// Example in Education.php\n <?php\n \n namespace App\\Models;\n \n-use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Education extends Model\n {\n-    use HasFactory;\n-\n-    protected $fillable = [\n-        'profile_id', 'level', 'school_name', 'years_attended', 'address'\n-    ];\n-\n-    public function profile()\n-    {\n-        return $this->belongsTo(Profile::class);\n-    }\n+    //\n }\n"
+                },
+                {
+                    "date": 1730365730312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,20 @@\n <?php\n \n namespace App\\Models;\n \n+use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Education extends Model\n {\n-    //\n-}\n+    use HasFactory;\n+\n+    protected $fillable = [\n+        'profile_id', 'level', 'school_name', 'years_attended', 'address'\n+    ];\n+\n+    public function profile()\n+    {\n+        return $this->belongsTo(Profile::class);\n+    }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730366099479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+<?php\n+\n+namespace App\\Models;\n+\n+use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n+use Illuminate\\Database\\Eloquent\\Model;\n+\n+class Education extends Model\n+{\n+    use HasFactory;\n+\n+    protected $fillable = [\n+        'profile_id', 'level', 'school_name', 'years_attended', 'address'\n+    ];\n+\n+    public function profile()\n+    {\n+        return $this->belongsTo(Profile::class);\n+    }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730366733105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,25 +16,5 @@\n     public function profile()\n     {\n         return $this->belongsTo(Profile::class);\n     }\n-}\n-<?php\n-\n-namespace App\\Models;\n-\n-use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n-use Illuminate\\Database\\Eloquent\\Model;\n-\n-class Education extends Model\n-{\n-    use HasFactory;\n-\n-    protected $fillable = [\n-        'profile_id', 'level', 'school_name', 'years_attended', 'address'\n-    ];\n-\n-    public function profile()\n-    {\n-        return $this->belongsTo(Profile::class);\n-    }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730367586370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n class Education extends Model\n {\n     use HasFactory;\n-\n+    protected $table = 'educations';\n     protected $fillable = [\n         'profile_id', 'level', 'school_name', 'years_attended', 'address'\n     ];\n \n"
+                }
+            ],
+            "date": 1730365663711,
+            "name": "Commit-0",
+            "content": "// Example in Education.php\n<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Education extends Model\n{\n    use HasFactory;\n\n    protected $fillable = [\n        'profile_id', 'level', 'school_name', 'years_attended', 'address'\n    ];\n\n    public function profile()\n    {\n        return $this->belongsTo(Profile::class);\n    }\n}\n"
+        }
+    ]
+}

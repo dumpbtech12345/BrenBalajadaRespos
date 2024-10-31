@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Models/Certification.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1730365858568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730366039555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n {\n     use HasFactory;\n \n     protected $fillable = [\n-        'profile_id', 'level', 'school_name', 'years_attended', 'address'\n+        'profile_id', 'level', 'certification'\n     ];\n \n     public function certification()\n     {\n"
+                },
+                {
+                    "date": 1730366096667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+<?php\n+\n+namespace App\\Models;\n+\n+use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n+use Illuminate\\Database\\Eloquent\\Model;\n+\n+\n+class Certification extends Model\n+{\n+    use HasFactory;\n+\n+    protected $fillable = [\n+        'profile_id', 'level', 'certification'\n+    ];\n+\n+    public function certification()\n+    {\n+        return $this->belongsTo(Profile::class);\n+    }\n+}\n"
+                },
+                {
+                    "date": 1730366731606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,25 +18,4 @@\n     {\n         return $this->belongsTo(Profile::class);\n     }\n }\n-<?php\n-\n-namespace App\\Models;\n-\n-use Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n-use Illuminate\\Database\\Eloquent\\Model;\n-\n-\n-class Certification extends Model\n-{\n-    use HasFactory;\n-\n-    protected $fillable = [\n-        'profile_id', 'level', 'certification'\n-    ];\n-\n-    public function certification()\n-    {\n-        return $this->belongsTo(Profile::class);\n-    }\n-}\n"
+                }
+            ],
+            "date": 1730365858568,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\n\nclass Certification extends Model\n{\n    use HasFactory;\n\n    protected $fillable = [\n        'profile_id', 'level', 'school_name', 'years_attended', 'address'\n    ];\n\n    public function certification()\n    {\n        return $this->belongsTo(Profile::class);\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "database/migrations/2024_10_31_085835_create_references_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1730365203498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1730365203498,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nclass CreateReferencesTable extends Migration\n{\n    public function up()\n    {\n        Schema::create('references', function (Blueprint $table) {\n            $table->id();\n            $table->foreignId('profile_id')->constrained('profiles')->onDelete('cascade');\n            $table->string('name');\n            $table->integer('age');\n            $table->string('profession');\n            $table->string('email');\n            $table->string('phone');\n            $table->timestamps();\n        });\n    }\n\n    public function down()\n    {\n        Schema::dropIfExists('references');\n    }\n}\n"
+        }
+    ]
+}

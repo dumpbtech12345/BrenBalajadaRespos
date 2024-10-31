@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/Models/Skill.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1730366485823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730366524933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,15 @@\n use Illuminate\\Database\\Eloquent\\Model;\n \n class Skill extends Model\n {\n-    //\n+    use HasFactory;\n+\n+    protected $fillable = [\n+        'profile_id', 'skill'\n+    ];\n+\n+    public function skill()\n+    {\n+        return $this->belongsTo(Profile::class);\n+    }\n }\n"
+                },
+                {
+                    "date": 1730366536615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     protected $fillable = [\n         'profile_id', 'skill'\n     ];\n \n-    public function skill()\n+    public function skills()\n     {\n         return $this->belongsTo(Profile::class);\n     }\n }\n"
+                }
+            ],
+            "date": 1730366485823,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Skill extends Model\n{\n    //\n}\n"
+        }
+    ]
+}

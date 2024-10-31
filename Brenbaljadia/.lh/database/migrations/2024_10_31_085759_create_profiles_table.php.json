@@ -1,0 +1,18 @@
+{
+    "sourceFile": "database/migrations/2024_10_31_085759_create_profiles_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1730365138127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1730365138127,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nclass CreateProfilesTable extends Migration\n{\n    public function up()\n    {\n        Schema::create('profiles', function (Blueprint $table) {\n            $table->id();\n            $table->string('name');\n            $table->string('address');\n            $table->string('phone');\n            $table->string('email')->unique();\n            $table->string('facebook')->nullable();\n            $table->string('instagram')->nullable();\n            $table->date('birthday');\n            $table->integer('age');\n            $table->string('sex');\n            $table->string('mother');\n            $table->string('father');\n            $table->text('objective')->nullable();\n            $table->timestamps();\n        });\n    }\n\n    public function down()\n    {\n        Schema::dropIfExists('profiles');\n    }\n}\n"
+        }
+    ]
+}
