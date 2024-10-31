@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1730366826250,
@@ -20,6 +20,10 @@
                 {
                     "date": 1730378685271,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n     {\n         // Assuming the ID for Bren's profile is 1 (replace with actual ID or retrieval logic as needed)\n         $profile = Profile::with(['educations', 'skills', 'certifications', 'language', 'references'])->findOrFail(1);\n     \n-        return view('brenbalajadiaresume', compact('profile'));\n+        return view('arvickmercadoresume', compact('profile'));\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730380544558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n     {\n         // Assuming the ID for Bren's profile is 1 (replace with actual ID or retrieval logic as needed)\n         $profile = Profile::with(['educations', 'skills', 'certifications', 'language', 'references'])->findOrFail(1);\n     \n-        return view('arvickmercadoresume', compact('profile'));\n+        return view('brenbalajadia', compact('profile'));\n     }\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1730366826250,

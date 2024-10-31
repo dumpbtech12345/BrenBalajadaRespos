@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arvick Mercado Resume</title>
+    <title>Bren G. Balajadia  Resume</title>
 
     <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,8 +13,8 @@
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #0A1F44;
-            color: #F1F1F1;
+            background-color: #f2f5f8;
+            color: #333;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -25,55 +25,38 @@
 
         /* Resume Container */
         .resume-container {
-            display: flex;
-            flex-direction: column;
             width: 100%;
-            max-width: 1000px;
-            background-color: #112240;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 30px;
             gap: 20px;
         }
 
-        /* Header and Image */
+        /* Header Section without Image */
         .header {
-            display: flex;
-            align-items: center;
             text-align: left;
-            gap: 20px;
-            border-bottom: 3px solid #1DA1F2;
             padding-bottom: 20px;
+            border-bottom: 2px solid #007acc;
             margin-bottom: 20px;
         }
 
-        .header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #1DA1F2;
-        }
-
-        .header-info {
-            flex: 1;
-        }
-
-        .header-info h1 {
-            font-size: 2.5em;
-            color: #1DA1F2;
+        .header h1 {
+            font-size: 2em;
+            color: #007acc;
             margin: 0;
         }
 
-        .header-info p {
-            font-size: 1.2em;
-            color: #D9D9D9;
+        .header p {
+            font-size: 1.1em;
+            color: #666;
             margin: 5px 0;
         }
 
         .contact-info {
-            font-size: 1.1em;
-            color: #F1F1F1;
+            font-size: 1em;
+            color: #333;
             margin-top: 10px;
         }
 
@@ -83,24 +66,25 @@
 
         /* Section */
         .section {
-            background-color: #0A1F44;
-            padding: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 8px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            background-color: #f2f8fc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .section-title {
-            font-size: 1.8em;
-            color: #1DA1F2;
-            border-bottom: 2px solid #1DA1F2;
+            font-size: 1.5em;
+            color: #007acc;
+            border-bottom: 1px solid #007acc;
             padding-bottom: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .section-content p, .section-content li {
-            font-size: 1.2em;
-            color: #D9D9D9;
-            line-height: 1.8;
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
         }
 
         .section-content ul {
@@ -110,20 +94,17 @@
 
         /* Links and Icons */
         .contact-info i, .section-content a {
-            color: #1DA1F2;
+            color: #007acc;
             text-decoration: none;
         }
 
         /* Responsive Design */
-        @media (max-width: 800px) {
-            .header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+        @media (max-width: 600px) {
+            .resume-container {
+                padding: 20px;
             }
-
-            .header-info, .contact-info {
-                text-align: center;
+            .section {
+                padding: 10px;
             }
         }
     </style>
@@ -131,20 +112,14 @@
 <body>
 
     <div class="resume-container">
-        <!-- Header with Image, Name, and Contact Info -->
+        <!-- Header with Name and Contact Info -->
         <header class="header">
-            <!-- Profile Image -->
-            <img src="{{ $profile->image }}" alt="Profile Image of Arvick R. Mercado">
-
-            <!-- Header Information -->
-            <div class="header-info">
-                <h1>Arvick R. Mercado</h1>
-                <p>Aspiring Developer | Information Technology Student</p>
-                <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> {{ $profile->phone }}</p>
-                    <p><i class="fas fa-envelope"></i> {{ $profile->email }}</p>
-                    <p><i class="fas fa-map-marker-alt"></i> {{ $profile->address }}</p>
-                </div>
+            <h1>Bren G. Balajadia </h1>
+            <p>Aspiring Developer | Information Technology Student</p>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> {{ $profile->phone }}</p>
+                <p><i class="fas fa-envelope"></i> {{ $profile->email }}</p>
+                <p><i class="fas fa-map-marker-alt"></i> {{ $profile->address }}</p>
             </div>
         </header>
 

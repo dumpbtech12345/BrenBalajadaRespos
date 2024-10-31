@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2024 at 01:47 PM
+-- Generation Time: Oct 31, 2024 at 11:23 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `arvickmercadoresume`
+-- Database: `brenbaljadia`
 --
 
 -- --------------------------------------------------------
@@ -64,9 +64,7 @@ CREATE TABLE `certifications` (
 --
 
 INSERT INTO `certifications` (`id`, `profile_id`, `certification`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Grade 12 Completer - With Honors', NULL, NULL),
-(2, 1, 'Grade 11 Completer - With Honors', NULL, NULL),
-(3, 1, 'Junior High School Completer - With Honors', NULL, NULL);
+(1, 1, 'Cisco Certified Network Associate (CCNA)', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -90,10 +88,9 @@ CREATE TABLE `educations` (
 --
 
 INSERT INTO `educations` (`id`, `profile_id`, `level`, `school_name`, `years_attended`, `address`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Tertiary', 'Baliwag Polytechnic College', '2021 - Present', 'Poblacion, Baliwag, Bulacan', NULL, NULL),
-(2, 1, 'Senior High School', 'Baliwag Polytechnic College', '2019 - 2021', 'Poblacion, Baliwag, Bulacan ', NULL, NULL),
-(3, 1, 'Junior High School', 'Mariano Ponce National High School', '2015 - 2019', 'Bagong Nayon, Baliwag, Bulacan', NULL, NULL),
-(4, 1, 'Primary Level', 'Baliwag North Central School', '2009 - 2015', 'Poblacion, Baliwag, Bulacan', NULL, NULL);
+(1, 1, 'Tertiary', 'Baliwag Polytechnic College ', '2021-Present', 'Poblacion, Baliwag, Bulacan', NULL, NULL),
+(2, 1, 'Secondary level ', 'Emigdio A. Bondoc High School ', '2019-2021', 'San Roque San Luis Pampanga ', NULL, NULL),
+(3, 1, 'Primary Level', 'San Roque Elementary school ', '2007-2015', 'San Roque San Luis Pampanga', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,8 +162,9 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `profile_id`, `language`, `created_at`, `updated_at`) VALUES
-(1, 1, 'English', NULL, NULL),
-(2, 1, 'Tagalog', NULL, NULL);
+(1, 1, 'English ', NULL, NULL),
+(2, 1, 'Tagalog ', NULL, NULL),
+(3, 1, 'Kapampangan', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -188,12 +186,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
-(4, '2024_10_31_085759_create_profiles_table', 1),
-(5, '2024_10_31_085807_create_educations_table', 1),
-(6, '2024_10_31_085813_create_skills_table', 1),
-(7, '2024_10_31_085821_create_certifications_table', 1),
-(8, '2024_10_31_085828_create_languages_table', 1),
-(9, '2024_10_31_085835_create_references_table', 1);
+(4, '2024_10_31_085759_create_profiles_table', 2),
+(5, '2024_10_31_085807_create_educations_table', 2),
+(6, '2024_10_31_085813_create_skills_table', 2),
+(7, '2024_10_31_085821_create_certifications_table', 2),
+(8, '2024_10_31_085828_create_languages_table', 2),
+(9, '2024_10_31_085835_create_references_table', 2);
 
 -- --------------------------------------------------------
 
@@ -227,7 +225,6 @@ CREATE TABLE `profiles` (
   `mother` varchar(255) NOT NULL,
   `father` varchar(255) NOT NULL,
   `objective` text DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -236,8 +233,8 @@ CREATE TABLE `profiles` (
 -- Dumping data for table `profiles`
 --
 
-INSERT INTO `profiles` (`id`, `name`, `address`, `phone`, `email`, `facebook`, `instagram`, `birthday`, `age`, `sex`, `mother`, `father`, `objective`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Arvick Mercado', '594 Sta.Luica St., Pinagbarilan, Baliwag, Bulacan', '0915-374-1727', 'arvickmercado@gmailcom', 'Arvick Mercado', NULL, '2003-09-23', 21, 'Male', 'Baby Zenaida R. Mercado', 'Aaron G. Mercado', 'As a dedicated IT student with hands-on experience in web development and software solution development, I am interested in making my technical skills practical, applied to system analysis and design as well as development. Strong understanding of programming, database management, and some project management aspects. Strong ability to create and optimize web-based systems; interested in joining the dynamic team while trying at every step to grow professionally in the IT field.', 'arvickimage/arvickmercado.jpg', NULL, NULL);
+INSERT INTO `profiles` (`id`, `name`, `address`, `phone`, `email`, `facebook`, `instagram`, `birthday`, `age`, `sex`, `mother`, `father`, `objective`, `created_at`, `updated_at`) VALUES
+(1, 'Bren G. Balajadia ', '052 Purok 1, San Roque San Luis Pampanga ', '09109044577', 'brenbalajadia0421@gmail.com', 'Bren Balajadia ', NULL, '2025-04-21', 21, 'Male', 'Carmelita G. Balajadia ', 'Reynaldo P. Balajadia', 'To attain any position in your company that will allow me to use my passion for student development through my skills and experience that will enable me to make a difference.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -256,6 +253,13 @@ CREATE TABLE `references` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `references`
+--
+
+INSERT INTO `references` (`id`, `profile_id`, `name`, `age`, `profession`, `email`, `phone`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Bernie G. Balajadia ', 24, 'Teacher', 'balajadiabernie20@gmail.com', '0965 390 6334', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -277,7 +281,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('jjanZGs5wO75Q3CLATl7cTjVyPc6mmxT2kGechQN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSXZGR0xPZ3hEa2FVaXd5Z0dONVlhT0l4R012aENZU2tmaXA5Y0xrSiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hcnZpY2ttZXJjYWRvcmVzdW1lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1730378795);
+('jjanZGs5wO75Q3CLATl7cTjVyPc6mmxT2kGechQN', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNFluaDdrQVZGQ1FYTDlUM2lyWGRwdUh4bEhzMGZSVEVyekNYclJPdyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9icmVuYmFsYWphZGlhcmVzdW1lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1730370114);
 
 -- --------------------------------------------------------
 
@@ -298,11 +302,11 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`id`, `profile_id`, `skill`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Problem-solving and critical thinking', NULL, NULL),
-(2, 1, 'Team collaboration and communication', NULL, NULL),
-(3, 1, 'Time management and organization', NULL, NULL),
-(4, 1, 'Flexible and goal oriented', NULL, NULL),
-(5, 1, 'Adaptability and quick learning', NULL, NULL);
+(1, 1, 'Having a good relationship with co-workers.', NULL, NULL),
+(2, 1, 'Responsible in doing tasks.', NULL, NULL),
+(3, 1, 'Able to communicate well.', NULL, NULL),
+(4, 1, 'Can work and multi-task efficiently.', NULL, NULL),
+(5, 1, 'Having good art skills.\r\n', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -434,13 +438,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `certifications`
 --
 ALTER TABLE `certifications`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `educations`
 --
 ALTER TABLE `educations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -458,7 +462,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -476,7 +480,7 @@ ALTER TABLE `profiles`
 -- AUTO_INCREMENT for table `references`
 --
 ALTER TABLE `references`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `skills`
